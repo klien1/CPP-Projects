@@ -16,6 +16,26 @@ Video::Video(std::string cn,
                 distributor(dist),
                 series(series),
                 label(label) {}
-void Video::getName() const {
-  std::cout << "I am a Video. CN: " << call_number << std::endl;
+// void Video::getName() const {
+//   std::cout << "I am a Video. CN: " << call_number << std::endl;
+// }
+
+bool Video::search_cn(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Video::search_ti(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Video::search_su(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Video::search_ot(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
 }

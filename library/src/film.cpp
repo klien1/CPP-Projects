@@ -23,6 +23,25 @@ Film::Film(std::string cn,
     std::string govt_doc_number;
     */
 
-void Film::getName() const {
-  std::cout << "I am a Film. CN: " << call_number << std::endl;
+// void Film::getName() const {
+//   std::cout << "I am a Film. CN: " << call_number << std::endl;
+// }
+bool Film::search_cn(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Film::search_ti(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Film::search_su(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Film::search_ot(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
 }

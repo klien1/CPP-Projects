@@ -21,6 +21,25 @@ Book::Book(std::string cn,
             year(year),
             series(series) {}
 
-void Book::getName() const {
-  std::cout << "I am a Book. CN: " << call_number << std::endl;
+// void Book::getName() const {
+//   std::cout << "I am a Book. CN: " << call_number << std::endl;
+// }
+bool Book::search_cn(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Book::search_ti(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Book::search_su(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Book::search_ot(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
 }

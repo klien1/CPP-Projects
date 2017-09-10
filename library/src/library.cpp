@@ -125,9 +125,9 @@ Library::Library() {
   }
   inFile.close();
 
-  for (const Media* m_obj : media) {
-    m_obj->getName();
-  }
+  // for (const Media* m_obj : media) {
+    // m_obj->getName();
+  // }
 }
 
 Library::~Library() {

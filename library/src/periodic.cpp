@@ -36,6 +36,25 @@ Periodic::Periodic(std::string cn,
     std::string govt_doc_number;
     */
 
-void Periodic::getName() const {
-  std::cout << "I am a Periodic. CN: " << call_number << std::endl;
+// void Periodic::getName() const {
+//   std::cout << "I am a Periodic. CN: " << call_number << std::endl;
+// }
+bool Periodic::search_cn(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Periodic::search_ti(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Periodic::search_su(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
+}
+
+bool Periodic::search_ot(const std::string& target) const {
+  std::cout << target << std::endl;
+  return false;
 }

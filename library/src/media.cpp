@@ -4,9 +4,7 @@
 #include "media.h"
 
 Media::Media(std::string cn, std::string title, std::string subj, std::string notes) : 
-              call_number(cn), title(title), subject(subj), notes(notes) {
-  std::cout << "media constructor\n";
-}
+              call_number(cn), title(title), subject(subj), notes(notes) {}
 
 Media::~Media() {}
 
@@ -15,6 +13,6 @@ Media::~Media() {}
 //   return 100;
 // }
 
-void Media::getName() const {
-  std::cout << "I am a Media.\n";
-}
+// void Media::getName() const {
+//   std::cout << "I am a Media.\n";
+// }
