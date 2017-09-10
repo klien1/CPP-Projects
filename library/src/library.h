@@ -10,6 +10,7 @@
 #include "book.h"
 #include "film.h"
 #include "periodic.h"
+#include "video.h"
 
 class Library {
   public:

@@ -10,7 +10,7 @@ Film::Film(std::string cn,
           std::string notes,
           std::string year) : 
             Media(cn, title, subj, notes),
-            director(dir), year(year) { }
+            director(dir), year(year) {}
 /*
     std::string author;
     std::string description;

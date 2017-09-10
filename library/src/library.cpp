@@ -98,6 +98,33 @@ Library::Library() {
   }
   inFile.close();
 
+  inFile.open("video.txt");
+  if (!inFile) {
+    std::cerr << "Error. Unable to open video.txt." << std::endl;
+  }
+  else {
+    std::string cn;
+    std::string title;
+    std::string subj;
+    std::string desc;
+    std::string dist;
+    std::string notes;
+    std::string series;
+    std::string label;
+
+    while(getline(inFile, cn, '|')) {
+      getline(inFile, title, '|');
+      getline(inFile, subj, '|');
+      getline(inFile, desc, '|');
+      getline(inFile, dist, '|');
+      getline(inFile, notes, '|');
+      getline(inFile, series, '|');
+      getline(inFile, label, '\n');
+      this->media.push_back(new Video(cn, title, subj, desc, dist, notes, series, label));
+    }
+  }
+  inFile.close();
+
   for (const Media* m_obj : media) {
     m_obj->getName();
   }

@@ -23,7 +23,7 @@ Periodic::Periodic(std::string cn,
             series(series),
             related_titles(rel_ti),
             other_forms_of_title(other_ti),
-            govt_doc_number(gov_num) { }
+            govt_doc_number(gov_num) {}
 /*
     std::string author;
     std::string description;
