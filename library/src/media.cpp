@@ -1,13 +1,15 @@
+// File: media.cpp
+// Author: Kevin Lien
+
 #include "media.h"
 
-Media::Media(std::string cn, std::string title, std::string subj) : 
-              call_number(cn), title(title), subject(subj) {
+Media::Media(std::string cn, std::string title, std::string subj, std::string notes) : 
+              call_number(cn), title(title), subject(subj), notes(notes) {
   std::cout << "media constructor\n";
 }
 
-Media::~Media() {
-  // std::cout << "media destructor\n";
-}
+Media::~Media() {}
+
 // failed because media didn't have a virtual class
 // int Media::get_num() {
 //   return 100;

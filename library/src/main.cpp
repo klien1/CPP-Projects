@@ -1,4 +1,5 @@
 // File: main.cpp
+// Author: Kevin Lien
 
 #include <iostream>
 

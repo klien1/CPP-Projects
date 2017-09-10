@@ -1,4 +1,5 @@
 // File: book.h
+// Author: Kevin Lien
 
 #ifndef BOOK_H
 #define BOOK_H
@@ -26,8 +27,6 @@ class Book : public Media {
     std::string city;
     std::string year;
     std::string series;
-    std::string notes;
-    
 };
 
 #endif

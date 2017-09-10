@@ -1,8 +1,7 @@
 // File: book.cpp
+// Author: Kevin Lien
 
 #include "book.h"
-// #include <iostream>
-// #include <string>
 
 Book::Book(std::string cn,
           std::string title,
@@ -14,33 +13,14 @@ Book::Book(std::string cn,
           std::string year,
           std::string series,
           std::string notes) : 
-            Media(cn, title, subj), 
+            Media(cn, title, subj, notes), 
             author(auth), 
             description(desc),
             publisher(pub),
             city(city),
             year(year),
-            series(series),
-            notes(notes) {
-  // std::cout << "book constructor\n";
-  // std::ifstream inFile;
-
-  // inFile.open("book.txt");
-
-  // if (!inFile) {
-  //   std::cerr << "unable to open book.txt" << std::endl;
-  // }
-
-  // std::string text;
-
-  // while(std::getline(inFile, text, '|')) {
-  //   std::cout << text << std::endl;
-  // }
-
-  // inFile.close();
-
-}
+            series(series) {}
 
 void Book::getName() const {
-  std::cout << "I am a Book. My name is " << call_number << std::endl;
+  std::cout << "I am a Book. CN: " << call_number << std::endl;
 }

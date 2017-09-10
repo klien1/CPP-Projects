@@ -1,4 +1,5 @@
 // File: library.h
+// Author: Kevin Lien
 
 #ifndef LIBRARY_H
 #define LIBRARY_H
@@ -8,6 +9,7 @@
 #include "media.h"
 #include "book.h"
 #include "film.h"
+#include "periodic.h"
 
 class Library {
   public:

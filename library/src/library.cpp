@@ -1,47 +1,101 @@
 // File: library.cpp
+// Author: Kevin Lien
 
-// #include <iostream>
-// #include <vector>
 #include <fstream>
 
 #include "library.h"
-
-// using namespace std;
 
 Library::Library() {
   std::ifstream inFile;
 
   inFile.open("book.txt");
-
   if (!inFile) {
-    std::cerr << "unable to open book.txt" << std::endl;
+    std::cerr << "Error. Unable to open book.txt." << std::endl;
   }
+  else {
+    std::string cn;
+    std::string title;
+    std::string subj;
+    std::string auth;
+    std::string desc;
+    std::string pub;
+    std::string city;
+    std::string year;
+    std::string series;
+    std::string notes;
 
-  std::string cn;
-  std::string title;
-  std::string subj;
-  std::string auth;
-  std::string desc;
-  std::string pub;
-  std::string city;
-  std::string year;
-  std::string series;
-  std::string notes;
-
-  // while(!getline(inFile, cn, '|').eof()) {
-  while(getline(inFile, cn, '|')) {
-    getline(inFile, title, '|');
-    getline(inFile, subj, '|');
-    getline(inFile, auth, '|');
-    getline(inFile, desc, '|');
-    getline(inFile, pub, '|');
-    getline(inFile, city, '|');
-    getline(inFile, year, '|');
-    getline(inFile, series, '|');
-    getline(inFile, notes, '\n');
-    this->media.push_back(new Book(cn, title, subj, auth, desc, pub, city, year, series, notes));
+    // while(!getline(inFile, cn, '|').eof()) {
+    while(getline(inFile, cn, '|')) {
+      getline(inFile, title, '|');
+      getline(inFile, subj, '|');
+      getline(inFile, auth, '|');
+      getline(inFile, desc, '|');
+      getline(inFile, pub, '|');
+      getline(inFile, city, '|');
+      getline(inFile, year, '|');
+      getline(inFile, series, '|');
+      getline(inFile, notes, '\n');
+      this->media.push_back(new Book(cn, title, subj, auth, desc, pub, city, year, series, notes));
+    }
   }
+  inFile.close();
+  inFile.open("periodic.txt");
+  if (!inFile) {
+    std::cerr << "Error. Unable to open periodic.txt." << std::endl;
+  }
+  else {
+    std::string cn;
+    std::string title;
+    std::string subj;
+    std::string auth;
+    std::string desc;
+    std::string pub;
+    std::string pub_his;
+    std::string series;
+    std::string notes;
+    std::string rel_ti;
+    std::string other_ti;
+    std::string gov_num;
 
+    while(getline(inFile, cn, '|')) {
+      getline(inFile, title, '|');
+      getline(inFile, subj, '|');
+      getline(inFile, auth, '|');
+      getline(inFile, desc, '|');
+      getline(inFile, pub, '|');
+      getline(inFile, pub_his, '|');
+      getline(inFile, series, '|');
+      getline(inFile, notes, '|');
+      getline(inFile, rel_ti, '|');
+      getline(inFile, other_ti, '|');
+      getline(inFile, gov_num, '\n');
+      this->media.push_back(new Periodic(cn, title, subj, auth, desc, pub, pub_his, 
+                                      series, notes, rel_ti, other_ti, gov_num));
+    }
+  }
+  inFile.close();
+
+  inFile.open("film.txt");
+  if (!inFile) {
+    std::cerr << "Error. Unable to open film.txt." << std::endl;
+  }
+  else {
+    std::string cn;
+    std::string title;
+    std::string subj;
+    std::string dir;
+    std::string notes;
+    std::string year;
+
+    while(getline(inFile, cn, '|')) {
+      getline(inFile, title, '|');
+      getline(inFile, subj, '|');
+      getline(inFile, dir, '|');
+      getline(inFile, notes, '|');
+      getline(inFile, year, '\n');
+      this->media.push_back(new Film(cn, title, subj, dir, notes, year));
+    }
+  }
   inFile.close();
 
   for (const Media* m_obj : media) {
@@ -54,31 +108,3 @@ Library::~Library() {
     delete media_obj;
   }
 }
-
-// int main() {
-
-
-  // for (const Media* m_obj : media) {
-  //   m_obj->getName();
-  // }
-
-
-  // for (unsigned int i = 0; i < media.size(); ++i) {
-    // cout << media[i]->getName();
-  // }
-  // Book *b = new Book("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
-  // b->getName()
-  // Film *f = new Film();
-
-  // Media *media_array[2] = {b, f};
-  // media_array[1]->getName();
-  // media_array[0]->getName();
-  // media_array[1]->get_num();
-  // cout << media_array[1]->get_num() << endl;
-  // cout << media_array[0]->get_num() << endl;
-
-  // virtual objects needs virtual destructor
-  // media_array[0]/;
-  // cout << media_array[0].get_num() << endl;
-  // cout << b.get_num() << endl;
-// }
