@@ -24,35 +24,6 @@ Periodic::Periodic(std::string cn,
             related_titles(rel_ti),
             other_forms_of_title(other_ti),
             govt_doc_number(gov_num) {}
-/*
-    std::string author;
-    std::string description;
-    std::string publisher;
-    std::string publishing_history;
-    std::string series;
-    std::string notes;
-    std::string related_titles;
-    std::string other_forms_of_title;
-    std::string govt_doc_number;
-    */
-
-// void Periodic::getName() const {
-//   std::cout << "I am a Periodic. CN: " << call_number << std::endl;
-// }
-bool Periodic::search_cn(const std::string& target) const {
-  std::cout << target << std::endl;
-  return false;
-}
-
-bool Periodic::search_ti(const std::string& target) const {
-  std::cout << target << std::endl;
-  return false;
-}
-
-bool Periodic::search_su(const std::string& target) const {
-  std::cout << target << std::endl;
-  return false;
-}
 
 bool Periodic::search_ot(const std::string& target) const {
   std::cout << target << std::endl;

@@ -24,7 +24,6 @@ Library::Library() {
     std::string series;
     std::string notes;
 
-    // while(!getline(inFile, cn, '|').eof()) {
     while(getline(inFile, cn, '|')) {
       getline(inFile, title, '|');
       getline(inFile, subj, '|');
@@ -124,14 +123,40 @@ Library::Library() {
     }
   }
   inFile.close();
-
-  // for (const Media* m_obj : media) {
-    // m_obj->getName();
-  // }
 }
 
 Library::~Library() {
   for (const Media* media_obj : media) {
     delete media_obj;
   }
+}
+
+std::vector<Media*> Library::search_cn(const std::string& target) {
+  query.clear();
+  for (Media* media_obj : media) {
+    if (media_obj->search_cn(target)) {
+      query.push_back(media_obj);
+    }
+  }
+  return query;
+}
+
+std::vector<Media*> Library::search_ti(const std::string& target) {
+  query.clear();
+  for (Media* media_obj : media) {
+    if (media_obj->search_ti(target)) {
+      query.push_back(media_obj);
+    }
+  }
+  return query;
+}
+
+std::vector<Media*> Library::search_su(const std::string& target) {
+  query.clear();
+  for (Media* media_obj : media) {
+    if (media_obj->search_su(target)) {
+      query.push_back(media_obj);
+    }
+  }
+  return query;
 }
