@@ -8,12 +8,12 @@
 
 class Film : public Media {
   public:
-    Film(std::string cn,
-          std::string title,
-          std::string subj,
-          std::string dir,
-          std::string notes,
-          std::string year);
+    Film(const std::string& cn,
+          const std::string& title,
+          const std::string& subj,
+          const std::string& dir,
+          const std::string& notes,
+          const std::string& year);
     bool search_ot(const std::string& target) const;
   protected:
   private:

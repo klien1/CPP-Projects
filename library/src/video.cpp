@@ -3,14 +3,14 @@
 
 #include "video.h"
 
-Video::Video(std::string cn,
-              std::string title,
-              std::string subj,
-              std::string desc,
-              std::string dist,
-              std::string notes,
-              std::string series,
-              std::string label) : 
+Video::Video(const std::string& cn,
+              const std::string& title,
+              const std::string& subj,
+              const std::string& desc,
+              const std::string& dist,
+              const std::string& notes,
+              const std::string& series,
+              const std::string& label) : 
                 Media(cn, title, subj, notes),
                 description(desc),
                 distributor(dist),

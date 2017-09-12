@@ -10,10 +10,10 @@
 
 class Media {
   public:
-    Media(std::string cn,
-          std::string title,
-          std::string subj,
-          std::string notes);
+    Media(const std::string& cn,
+          const std::string& title,
+          const std::string& subj,
+          const std::string& notes);
     virtual ~Media();
     bool search_cn(const std::string& target) const;
     bool search_ti(const std::string& target) const;

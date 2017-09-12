@@ -3,7 +3,8 @@
 
 #include "media.h"
 
-Media::Media(std::string cn, std::string title, std::string subj, std::string notes) : 
+Media::Media(const std::string& cn, const std::string& title, 
+              const std::string& subj, const std::string& notes) : 
               call_number(cn), title(title), subject(subj), notes(notes) {}
 
 Media::~Media() {}

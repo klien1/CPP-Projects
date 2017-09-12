@@ -3,16 +3,16 @@
 
 #include "book.h"
 
-Book::Book(std::string cn,
-          std::string title,
-          std::string subj,
-          std::string auth,
-          std::string desc,
-          std::string pub,
-          std::string city,
-          std::string year,
-          std::string series,
-          std::string notes) : 
+Book::Book(const std::string& cn,
+          const std::string& title,
+          const std::string& subj,
+          const std::string& auth,
+          const std::string& desc,
+          const std::string& pub,
+          const std::string& city,
+          const std::string& year,
+          const std::string& series,
+          const std::string& notes) : 
             Media(cn, title, subj, notes), 
             author(auth), 
             description(desc),

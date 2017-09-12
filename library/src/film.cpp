@@ -3,12 +3,12 @@
 
 #include "film.h"
 
-Film::Film(std::string cn,
-          std::string title,
-          std::string subj,
-          std::string dir,
-          std::string notes,
-          std::string year) : 
+Film::Film(const std::string& cn,
+          const std::string& title,
+          const std::string& subj,
+          const std::string& dir,
+          const std::string& notes,
+          const std::string& year) : 
             Media(cn, title, subj, notes),
             director(dir), year(year) {}
 

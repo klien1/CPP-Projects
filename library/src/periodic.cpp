@@ -3,18 +3,18 @@
 
 #include "periodic.h"
 
-Periodic::Periodic(std::string cn,
-          std::string title,
-          std::string subj,
-          std::string auth,
-          std::string desc,
-          std::string pub,
-          std::string pub_his,
-          std::string series,
-          std::string notes,
-          std::string rel_ti,
-          std::string other_ti,
-          std::string gov_num) : 
+Periodic::Periodic(const std::string& cn,
+          const std::string& title,
+          const std::string& subj,
+          const std::string& auth,
+          const std::string& desc,
+          const std::string& pub,
+          const std::string& pub_his,
+          const std::string& series,
+          const std::string& notes,
+          const std::string& rel_ti,
+          const std::string& other_ti,
+          const std::string& gov_num) : 
             Media(cn, title, subj, notes),
             author(auth),
             description(desc),
