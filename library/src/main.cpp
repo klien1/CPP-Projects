@@ -9,7 +9,6 @@ using namespace std;
 
 int main() {
   Library lib;
-  string pattern;
 
   string option;
   do {
@@ -31,7 +30,7 @@ int main() {
       for (const auto& media : found) {
         media->printCN();
       }
-      cout << "You have found " << found.size() << " results.\n";
+      cout << "You have found " << found.size() << " results." << endl;
     }
     else if (option == "2") {
       cout << "Type search result: ";
@@ -57,7 +56,7 @@ int main() {
     }
     else if (option == "4") {
       cin >> pattern;
-    
+      vector<Media*> found = lib.search_ot(pattern);
     }
     else if (option == "5") {
       cout << "Exiting..." << endl;

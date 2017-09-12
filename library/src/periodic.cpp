@@ -26,6 +26,9 @@ Periodic::Periodic(const std::string& cn,
             govt_doc_number(gov_num) {}
 
 bool Periodic::search_ot(const std::string& target) const {
-  std::cout << target << std::endl;
+  if (kmp(target, description) || kmp(target, notes) ||
+      kmp(target, series) || kmp(target, related_titles)) {
+    return true;
+  }
   return false;
 }

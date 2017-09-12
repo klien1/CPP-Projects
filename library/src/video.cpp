@@ -18,6 +18,8 @@ Video::Video(const std::string& cn,
                 label(label) {}
 
 bool Video::search_ot(const std::string& target) const {
-  std::cout << target << std::endl;
+  if (kmp(target, description) || kmp(target, notes) || kmp(target, distributor)) {
+    return true;
+  }
   return false;
 }
