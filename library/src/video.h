@@ -16,8 +16,10 @@ class Video : public Media {
           const std::string& notes,
           const std::string& series,
           const std::string& label);
+
     bool search_ot(const std::string& target) const;
-  protected:
+    void print() const { };
+
   private:
     std::string description;
     std::string distributor;

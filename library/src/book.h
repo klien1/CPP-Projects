@@ -18,8 +18,10 @@ class Book : public Media {
           const std::string& year,
           const std::string& series,
           const std::string& notes);
+
     bool search_ot(const std::string& target) const;
-  protected:
+    void print() const { };
+
   private:
     std::string author;
     std::string description;

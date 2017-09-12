@@ -20,8 +20,10 @@ class Periodic : public Media {
       const std::string& rel_ti,
       const std::string& other_ti,
       const std::string& gov_num);
+
     bool search_ot(const std::string& target) const;
-  protected:
+    void print() const { };
+ 
   private:
     std::string author;
     std::string description;

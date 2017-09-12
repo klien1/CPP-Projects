@@ -9,8 +9,8 @@ using namespace std;
 
 int main() {
   Library lib;
-
   string option;
+
   do {
     string pattern;
 
@@ -26,43 +26,45 @@ int main() {
       cin >> pattern;
       vector<Media*> found = lib.search_cn(pattern);
 
-      cout << "All results:\n";
+      cout << "Results by call number:" << endl;
       for (const auto& media : found) {
         media->printCN();
       }
-      cout << "You have found " << found.size() << " results." << endl;
+      cout << "You have found " << found.size() << " results." << endl << endl;
     }
     else if (option == "2") {
       cout << "Type search result: ";
       cin >> pattern;
       vector<Media*> found = lib.search_ti(pattern);
 
-      cout << "All results:\n";
+      cout << "Results by title:" << endl;
       for (const auto& media : found) {
         media->printTI();
       }
-      cout << "You have found " << found.size() << " results.\n";
+      cout << "You have found " << found.size() << " results." << endl << endl;
     }
     else if (option == "3") {
       cout << "Type search result: ";
       cin >> pattern;
       vector<Media*> found = lib.search_su(pattern);
 
-      cout << "All results:\n";
+      cout << "Results by subject:" << endl;
       for (const auto& media : found) {
         media->printSU();
       }
-      cout << "You have found " << found.size() << " results.\n";
+      cout << "You have found " << found.size() << " results." << endl << endl;
     }
     else if (option == "4") {
       cin >> pattern;
       vector<Media*> found = lib.search_ot(pattern);
+
+      cout << "Results by other:" << endl;
     }
     else if (option == "5") {
       cout << "Exiting..." << endl;
     }
     else {
-      cout << "Invalid option. Choose a number between 1-5." << endl;
+      cout << "Invalid option. Choose a number between 1-5." << endl << endl;
     }
   } while (option != "5");
 
