@@ -129,9 +129,10 @@ Library::~Library() {
   for (const Media* media_obj : media) {
     delete media_obj;
   }
+  query.clear();
 }
 
-std::vector<Media*> Library::search_cn(const std::string& target) {
+const std::vector<Media*>& Library::search_cn(const std::string& target) {
   query.clear();
   for (Media* media_obj : media) {
     if (media_obj->search_cn(target)) {
@@ -141,7 +142,7 @@ std::vector<Media*> Library::search_cn(const std::string& target) {
   return query;
 }
 
-std::vector<Media*> Library::search_ti(const std::string& target) {
+const std::vector<Media*>& Library::search_ti(const std::string& target) {
   query.clear();
   for (Media* media_obj : media) {
     if (media_obj->search_ti(target)) {
@@ -151,7 +152,7 @@ std::vector<Media*> Library::search_ti(const std::string& target) {
   return query;
 }
 
-std::vector<Media*> Library::search_su(const std::string& target) {
+const std::vector<Media*>& Library::search_su(const std::string& target) {
   query.clear();
   for (Media* media_obj : media) {
     if (media_obj->search_su(target)) {

@@ -21,7 +21,9 @@ class Media {
     virtual bool search_ot(const std::string& target) const = 0;
 
     // void printMedia(const std::string& word) const {std::cout << "I am a media searching for " << word;}
-    void printMedia() const {std::cout << call_number << std::endl;}
+    void printCN() const {std::cout << call_number << std::endl;}
+    void printTI() const {std::cout << title << std::endl;}
+    void printSU() const {std::cout << subject << std::endl;}
 
     bool kmp(const std::string& target, const std::string& haystack) const;
   protected:
