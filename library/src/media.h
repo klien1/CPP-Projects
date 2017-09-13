@@ -21,10 +21,6 @@ class Media {
     bool search_su(const std::string& target) const;
     virtual bool search_ot(const std::string& target) const = 0;
 
-    // need to move to cpp
-    // void printCN() const {std::cout << call_number << std::endl;}
-    // void printTI() const {std::cout << title << std::endl;}
-    // void printSU() const {std::cout << subject << std::endl;}
     virtual void print() const = 0;
 
     bool kmp(const std::string& target, const std::string& haystack) const;
