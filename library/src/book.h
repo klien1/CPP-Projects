@@ -20,7 +20,7 @@ class Book : public Media {
           const std::string& notes);
 
     bool search_ot(const std::string& target) const;
-    void print() const { };
+    void print() const;
 
   private:
     std::string author;

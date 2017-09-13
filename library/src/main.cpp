@@ -20,45 +20,43 @@ int main() {
     cout << "4. Search by other." << endl;
     cout << "5. Exit" << endl;
 
-    cin >> option;
+    getline(cin, option);
+    cout << "Enter search: ";
     if (option == "1") {
-      cout << "Type search result: ";
-      cin >> pattern;
+      getline(cin, pattern);
       vector<Media*> found = lib.search_cn(pattern);
 
-      cout << "Results by call number:" << endl;
       for (const auto& media : found) {
-        media->printCN();
+        media->print();
       }
-      cout << "You have found " << found.size() << " results." << endl << endl;
+      cout << "You have found " << found.size() << " results by call number." << endl << endl;
     }
     else if (option == "2") {
-      cout << "Type search result: ";
-      cin >> pattern;
+      getline(cin, pattern);
       vector<Media*> found = lib.search_ti(pattern);
 
-      cout << "Results by title:" << endl;
       for (const auto& media : found) {
-        media->printTI();
+        media->print();
       }
-      cout << "You have found " << found.size() << " results." << endl << endl;
+      cout << "You have found " << found.size() << " results by title." << endl << endl;
     }
     else if (option == "3") {
-      cout << "Type search result: ";
-      cin >> pattern;
+      getline(cin, pattern);
       vector<Media*> found = lib.search_su(pattern);
 
-      cout << "Results by subject:" << endl;
       for (const auto& media : found) {
-        media->printSU();
+        media->print();
       }
-      cout << "You have found " << found.size() << " results." << endl << endl;
+      cout << "You have found " << found.size() << " results by subject." << endl << endl;
     }
     else if (option == "4") {
-      cin >> pattern;
+      getline(cin, pattern);
       vector<Media*> found = lib.search_ot(pattern);
 
-      cout << "Results by other:" << endl;
+      for (const auto& media : found) {
+        media->print();
+      }
+      cout << "You have found " << found.size() << " results by other." << endl << endl;
     }
     else if (option == "5") {
       cout << "Exiting..." << endl;

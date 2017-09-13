@@ -18,3 +18,12 @@ bool Film::search_ot(const std::string& target) const {
   }
   return false;
 }
+
+void Film::print() const {
+  std::cout << std::setw(25) << std::left << "Call number: " << call_number << std::endl;
+  std::cout << std::setw(25) << std::left << "Title: " << title << std::endl;
+  std::cout << std::setw(25) << std::left << "Subject: " << subject << std::endl;
+  std::cout << std::setw(25) << std::left << "Director: " << director << std::endl;
+  std::cout << std::setw(25) << std::left << "Notes: " << notes << std::endl;
+  std::cout << std::setw(25) << std::left << "Year: " << year << std::endl << std::endl;
+}

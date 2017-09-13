@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class Media {
   public:
@@ -21,9 +22,9 @@ class Media {
     virtual bool search_ot(const std::string& target) const = 0;
 
     // need to move to cpp
-    void printCN() const {std::cout << call_number << std::endl;}
-    void printTI() const {std::cout << title << std::endl;}
-    void printSU() const {std::cout << subject << std::endl;}
+    // void printCN() const {std::cout << call_number << std::endl;}
+    // void printTI() const {std::cout << title << std::endl;}
+    // void printSU() const {std::cout << subject << std::endl;}
     virtual void print() const = 0;
 
     bool kmp(const std::string& target, const std::string& haystack) const;

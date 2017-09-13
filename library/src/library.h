@@ -20,7 +20,7 @@ class Library {
     const std::vector<Media*>& search_ti(const std::string& target);
     const std::vector<Media*>& search_su(const std::string& target);
     const std::vector<Media*>& search_ot(const std::string& target);
-  protected:
+    
   private:
     std::vector<Media*> media;
     std::vector<Media*> query;

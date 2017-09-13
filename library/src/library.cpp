@@ -52,7 +52,7 @@ const std::vector<Media*>& Library::search_su(const std::string& target) {
 const std::vector<Media*>& Library::search_ot(const std::string& target) {
   query.clear();
   for (Media* media_obj : media) {
-    if (media_obj->search_su(target)) {
+    if (media_obj->search_ot(target)) {
       query.push_back(media_obj);
     }
   }

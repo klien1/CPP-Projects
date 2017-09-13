@@ -16,7 +16,7 @@ class Film : public Media {
           const std::string& year);
 
     bool search_ot(const std::string& target) const;
-    void print() const { };
+    void print() const;
 
   private:
     std::string director;
