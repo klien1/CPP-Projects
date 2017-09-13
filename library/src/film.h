@@ -19,8 +19,8 @@ class Film : public Media {
     void print() const;
 
   private:
-    std::string director;
-    std::string year;
+    const std::string director;
+    const std::string year;
 };
 
 #endif

@@ -25,14 +25,14 @@ class Periodic : public Media {
     void print() const;
  
   private:
-    std::string author;
-    std::string description;
-    std::string publisher;
-    std::string publishing_history;
-    std::string series;
-    std::string related_titles;
-    std::string other_forms_of_title;
-    std::string govt_doc_number;
+    const std::string author;
+    const std::string description;
+    const std::string publisher;
+    const std::string publishing_history;
+    const std::string series;
+    const std::string related_titles;
+    const std::string other_forms_of_title;
+    const std::string govt_doc_number;
 };
 
 #endif

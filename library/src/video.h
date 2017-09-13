@@ -21,10 +21,10 @@ class Video : public Media {
     void print() const;
 
   private:
-    std::string description;
-    std::string distributor;
-    std::string series;
-    std::string label;
+    const std::string description;
+    const std::string distributor;
+    const std::string series;
+    const std::string label;
 };
 
 #endif

@@ -19,9 +19,9 @@ Library::~Library() {
   query.clear();
 }
 
-const std::vector<Media*>& Library::search_cn(const std::string& target) {
+const std::vector<const Media*>& Library::search_cn(const std::string& target) {
   query.clear();
-  for (Media* media_obj : media) {
+  for (const Media* media_obj : media) {
     if (media_obj->search_cn(target)) {
       query.push_back(media_obj);
     }
@@ -29,9 +29,9 @@ const std::vector<Media*>& Library::search_cn(const std::string& target) {
   return query;
 }
 
-const std::vector<Media*>& Library::search_ti(const std::string& target) {
+const std::vector<const Media*>& Library::search_ti(const std::string& target) {
   query.clear();
-  for (Media* media_obj : media) {
+  for (const Media* media_obj : media) {
     if (media_obj->search_ti(target)) {
       query.push_back(media_obj);
     }
@@ -39,9 +39,9 @@ const std::vector<Media*>& Library::search_ti(const std::string& target) {
   return query;
 }
 
-const std::vector<Media*>& Library::search_su(const std::string& target) {
+const std::vector<const Media*>& Library::search_su(const std::string& target) {
   query.clear();
-  for (Media* media_obj : media) {
+  for (const Media* media_obj : media) {
     if (media_obj->search_su(target)) {
       query.push_back(media_obj);
     }
@@ -49,9 +49,9 @@ const std::vector<Media*>& Library::search_su(const std::string& target) {
   return query;
 }
 
-const std::vector<Media*>& Library::search_ot(const std::string& target) {
+const std::vector<const Media*>& Library::search_ot(const std::string& target) {
   query.clear();
-  for (Media* media_obj : media) {
+  for (const Media* media_obj : media) {
     if (media_obj->search_ot(target)) {
       query.push_back(media_obj);
     }

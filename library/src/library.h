@@ -16,14 +16,14 @@ class Library {
   public:
     Library();
     ~Library();
-    const std::vector<Media*>& search_cn(const std::string& target);
-    const std::vector<Media*>& search_ti(const std::string& target);
-    const std::vector<Media*>& search_su(const std::string& target);
-    const std::vector<Media*>& search_ot(const std::string& target);
+    const std::vector<const Media*>& search_cn(const std::string& target);
+    const std::vector<const Media*>& search_ti(const std::string& target);
+    const std::vector<const Media*>& search_su(const std::string& target);
+    const std::vector<const Media*>& search_ot(const std::string& target);
     
   private:
-    std::vector<Media*> media;
-    std::vector<Media*> query;
+    std::vector<const Media*> media;
+    std::vector<const Media*> query;
 
     void initialize_book();
     void initialize_periodic();

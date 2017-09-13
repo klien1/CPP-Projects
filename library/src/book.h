@@ -23,12 +23,12 @@ class Book : public Media {
     void print() const;
 
   private:
-    std::string author;
-    std::string description;
-    std::string publisher;
-    std::string city;
-    std::string year;
-    std::string series;
+    const std::string author;
+    const std::string description;
+    const std::string publisher;
+    const std::string city;
+    const std::string year;
+    const std::string series;
 };
 
 #endif
