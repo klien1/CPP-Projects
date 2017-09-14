@@ -34,16 +34,17 @@ bool Periodic::search_ot(const std::string& target) const {
 }
 
 void Periodic::print() const {
-  std::cout << std::setw(25) << std::left << "Call number: " << call_number << std::endl;
-  std::cout << std::setw(25) << std::left << "Title: " << title << std::endl;
-  std::cout << std::setw(25) << std::left << "Subject: " << subject << std::endl;
-  std::cout << std::setw(25) << std::left << "Author: " << author << std::endl;
-  std::cout << std::setw(25) << std::left << "Description: " << description << std::endl;
-  std::cout << std::setw(25) << std::left << "Publisher: " << publisher << std::endl;
-  std::cout << std::setw(25) << std::left << "Publishing History: " << publishing_history << std::endl;
-  std::cout << std::setw(25) << std::left << "Series: " << series << std::endl;
-  std::cout << std::setw(25) << std::left << "Notes: " << notes << std::endl;
-  std::cout << std::setw(25) << std::left << "Related Titles: " << related_titles << std::endl;
-  std::cout << std::setw(25) << std::left << "Other Titles: " << other_forms_of_title << std::endl;
-  std::cout << std::setw(25) << std::left << "Govt Doc Number: " << govt_doc_number << std::endl << std::endl;
+  std::cout << std::endl << "Periodic" << std::endl << "========" << std::endl;
+  std::cout << "Call Number: " << call_number << std::endl;
+  std::cout << "Title: " << title << std::endl;
+  std::cout << "Subject: " << subject << std::endl;
+  std::cout << "Author: " << author << std::endl;
+  std::cout << "Description: " << description << std::endl;
+  std::cout << "Publisher: " << publisher << std::endl;
+  std::cout << "Publishing History: " << publishing_history << std::endl;
+  std::cout << "Series: " << series << std::endl;
+  std::cout << "Notes: " << notes << std::endl;
+  std::cout << "Related Titles: " << related_titles << std::endl;
+  std::cout << "Other Titles: " << other_forms_of_title << std::endl;
+  std::cout << "Govt Doc Number: " << govt_doc_number << std::endl;
 }

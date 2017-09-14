@@ -30,14 +30,15 @@ bool Book::search_ot(const std::string& target) const {
 }
 
 void Book::print() const {
-  std::cout << std::setw(25) << std::left << "Call number: " << call_number << std::endl;
-  std::cout << std::setw(25) << std::left << "Title: " << title << std::endl;
-  std::cout << std::setw(25) << std::left << "Subject: " << subject << std::endl;
-  std::cout << std::setw(25) << std::left << "Author: " << author << std::endl;
-  std::cout << std::setw(25) << std::left << "Description: " << description << std::endl;
-  std::cout << std::setw(25) << std::left << "Publisher: " << publisher << std::endl;
-  std::cout << std::setw(25) << std::left << "City: " << city << std::endl;
-  std::cout << std::setw(25) << std::left << "Year: " << year << std::endl;
-  std::cout << std::setw(25) << std::left << "Series: " << series << std::endl;
-  std::cout << std::setw(25) << std::left << "Notes: " << notes << std::endl << std::endl;
+  std::cout << std::endl << "Book" << std::endl << "====" << std::endl;
+  std::cout << "Call Number: " << call_number << std::endl;
+  std::cout << "Title: " << title << std::endl;
+  std::cout << "Subject: " << subject << std::endl;
+  std::cout << "Author: " << author << std::endl;
+  std::cout << "Description: " << description << std::endl;
+  std::cout << "Publisher: " << publisher << std::endl;
+  std::cout << "City: " << city << std::endl;
+  std::cout << "Year: " << year << std::endl;
+  std::cout << "Series: " << series << std::endl;
+  std::cout << "Notes: " << notes << std::endl;
 }

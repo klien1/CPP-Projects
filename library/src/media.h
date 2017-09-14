@@ -6,10 +6,13 @@
 
 #include <iostream>
 #include <string>
-#include <iomanip>
 
 class Media {
   public:
+    Media(const std::string& cn,
+          const std::string& title,
+          const std::string& subj,
+          const std::string& notes);
     virtual ~Media();
 
     bool search_cn(const std::string& target) const;
@@ -19,11 +22,6 @@ class Media {
     virtual void print() const = 0;
     
   protected:
-    Media(const std::string& cn,
-          const std::string& title,
-          const std::string& subj,
-          const std::string& notes);
-
     const std::string call_number;
     const std::string title;
     const std::string subject;
