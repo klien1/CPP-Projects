@@ -1,0 +1,43 @@
+// Kevin Lien
+// Exception Project 2 Part 1
+
+try 
+   The code that lives in the try-block will be checked for exceptions. If there is an 
+   exception, the try-block will relinquish control to an exception handler and skip 
+   the rest of the code in the try-block. If there isn't an exception, the try-block 
+   will continue running the code normally, ignoring the exception handlers.  
+
+Example try-block
+try {
+  int numGreaterThanTen = 11;
+  cout << numGreaterThanTen << endl;
+}
+
+throw
+  The keyword "throw" needs to be inside of a try-block so that it can direct the 
+  try-block to a specific exception handler. The "throw" expression can have one 
+  parameter which will be passed to an exception handler.
+
+Example throw
+  throw -1;
+
+catch
+  Exception handlers are defined by the keyword "catch " which can be distinguished 
+  by its parameter. Exception handlers with the "..." parameter catches exceptions 
+  not caught by the previous exception handlers.
+
+Example catch-block
+  catch (...) {
+    cout << "All other errors." << endl;
+  }
+
+#include <stdexcept>
+  Stdexcept is a collection of common errors that programs can catch.
+
+Example stdexcept
+try {
+  throw range_error("index out of range");
+}
+catch (exception& error) {
+  cout << "Error: " << error.what() << endl;
+}

@@ -1,0 +1,7 @@
+Use the following flag when compiling to ensure copy constructor is called.
+-fno-elide-constructors
+
+The Nausea class is to be used as the typename when instantiating the stack
+template. It is a convenience class because we can tune it to have it throw an
+exception at any point, thereby exercising the exception-handling capabilities
+of the stack template.

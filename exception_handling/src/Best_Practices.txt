@@ -1,0 +1,40 @@
+Kevin Lien FA2017
+Project 2: Exception Handling
+Best Practices
+
+Tips for building templates
+  - You should always make changes to member variables at the end of the function
+      because if there is an exception during the function, the member variables
+      should not change.
+  - If you're making changes to a member variable, do not make changes to the
+      member variable directly (use a temp variable) because an exception can 
+      occur while you're manipulating the member variable.
+  - Try not to delete a member variable then manipuate the member variable afterwards
+      because an exception could be thrown during the changes which means 
+      you have to revert the member variable to its original state, 
+      but you are not able to because the orignal state has been deleted.
+  - Always try to use references as much as possible because
+      you will have less overhead with a the generic type's copy constructor 
+      and avoid having to deal with exceptions in the generic type's 
+      copy constructor.
+  - Every time you see dynamic memory being allocated, be sure to
+      check for memory leaks because an exception can stop the
+      function midway.
+  - Make sure the values of your member functions stay the same before
+      and after an exception of a generic type is thrown.
+  - Check for functions that have a generic type as a return type
+      because a copy constructor could be called.
+  - You should try to reorder your code before adding try-catch blocks 
+      because it can lead to a lot of uncessary code.
+
+Tips for using templates
+  - Look at the documentation for the template class to distinguish
+      between your exceptions and exceptions in the template class.
+  - Make sure to handle your own exceptions because the template class
+      isn't responsible for identifying your exceptions.
+  - Keep track of exceptions that occuring while using the template
+      class because the state of the template class doesn't change
+      when an exception is thrown.
+  - Try to put as little code as possible in the try block, so you
+      can narrow down the specific line where the exception is
+      being thrown.
