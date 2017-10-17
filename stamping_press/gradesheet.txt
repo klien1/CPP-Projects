@@ -1,0 +1,20 @@
+Stamping Press Rubric
+10	Program compiles successfully.
+
+10	Program runs correctly as specified in the requirements
+
+10	Any memory allocated with new is released with delete.
+
+10	overflow function is overridden in class derived from streambuf.
+
+10	Plate is (directly or indirectly) inserted on stream creation. Plate is (directly or indirectly) ejected on stream destruction.
+
+10	A space appears on the plate whenever an invalid character is sent to the output stream.
+
+10	Any output that would run beyond the end of the plate is ignored
+
+10	The manipulators row(n) and endrow will flush the buffer and change the row and column as per the requirements.
+
+10	The buffer is properly flushed upon an overflow.
+
+10	A class derived from ostream initializes ios/ostream's buffer pointer with an object derived from the streambuf class.
