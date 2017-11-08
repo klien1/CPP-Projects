@@ -27,7 +27,7 @@ void StringSub::replace(const string& oldstring, const string& newstring) {
       }
     }
     else {
-      td.push_back(c);
+      // td.push_back(c);
       if (match > 0) {
         unsigned int j = 0;
         bf.put(oldstring[0]);
@@ -48,10 +48,16 @@ void StringSub::replace(const string& oldstring, const string& newstring) {
         else j = 0;
         match = j;
       }
+      // temp char that hold cur character or characer in deque
+      char temp_char = c;
+      if (!td.empty()) {
+        temp_char = td.front();
+        td.pop_front();
+        td.push_back(c);
+      }
       // if there is a match from recalculating, dont put
       if (match == 0)
-        bf.put(td.front());
-      td.pop_front();
+        bf.put(temp_char);
     }
   }
 
