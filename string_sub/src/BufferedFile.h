@@ -4,6 +4,7 @@
 
 #include <fstream>
 #include <string>
+#include <cassert>
 #include "TrackingDeque.h"
 
 #include <unistd.h> // truncate
@@ -13,6 +14,7 @@ using std::string;
 using std::fstream;
 using std::istream;
 using std::ostream;
+using std::streampos;
 
 class BufferedFile : public fstream {
   public:
@@ -20,13 +22,14 @@ class BufferedFile : public fstream {
     ~BufferedFile();
     istream& get(char&);
     ostream& put(char);
+    istream& seekg (streampos);
+    ostream& seekp (streampos);
 
   private:
-    std::streampos getpos;
-    std::streampos putpos;
+    streampos getpos;
+    streampos putpos;
     const string file;
     int num_char;
-    // TrackingDeque<char> t_deq;
 };
 
 #endif

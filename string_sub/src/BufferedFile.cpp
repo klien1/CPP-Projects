@@ -23,3 +23,15 @@ ostream& BufferedFile::put(char c) {
   ++num_char;
   return *this;
 }
+
+ostream& BufferedFile::seekp (streampos pos) {
+  assert(pos >= putpos);
+  fstream::seekp(pos);
+  return *this;
+}
+
+istream& BufferedFile::seekg (streampos pos) {
+  assert(pos >= getpos);
+  fstream::seekg(pos);
+  return *this;
+}

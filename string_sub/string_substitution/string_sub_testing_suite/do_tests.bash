@@ -1,6 +1,6 @@
 #!/bin/bash
 
-EXECUTABLE_NAME=./stringsub
+EXECUTABLE_NAME=../../../src/stringsub
 
 if [ ! -e ../origfiles ] 
 then

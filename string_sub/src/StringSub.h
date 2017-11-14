@@ -3,9 +3,6 @@
 
 #include "BufferedFile.h"
 
-using std::cout;
-using std::endl;
-
 class StringSub {
   public:
     StringSub(const string&);
@@ -13,7 +10,6 @@ class StringSub {
 
   private:
     BufferedFile bf;
-    // unsigned int match;
     TrackingDeque<char> td;
 };
 

@@ -27,7 +27,6 @@ void StringSub::replace(const string& oldstring, const string& newstring) {
       }
     }
     else {
-      // td.push_back(c);
       if (match > 0) {
         unsigned int j = 0;
         bf.put(oldstring[0]);
@@ -67,4 +66,6 @@ void StringSub::replace(const string& oldstring, const string& newstring) {
     bf.put(td.front());
     td.pop_front();
   }
+
+  if (!bf.good()) bf.clear();
 }
