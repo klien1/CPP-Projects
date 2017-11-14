@@ -1,11 +1,11 @@
 #include "BufferedFile.h"
 
-BufferedFile::BufferedFile(const string& file_name) 
+BufferedFile::BufferedFile(const char* file_name) 
   : std::fstream(file_name, fstream::in|fstream::out), getpos(0), putpos(0), 
     file(file_name), num_char(0) {}
 
 BufferedFile::~BufferedFile() {
-  truncate(file.c_str(), num_char);
+  truncate(file, num_char);
   this->close();
 }
 

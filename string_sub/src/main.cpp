@@ -11,14 +11,10 @@ using namespace std;
 int main(int argc, char const *argv[]) {
   if (argc != 4) {
     cout << "Invalid number of arguments.\n";
+    return 1;
   }
 
-  // const string t = argv[3];
-  // string t = argv[3];
   StringSub ss(argv[3]);
   ss.replace(argv[1], argv[2]);
-  // truncate(t, 5);
-  // StringSub ss("test.txt");
-  // StringSub ss("../string_substitution/string_sub_testing_suite/origfiles/File01.txt");
   return 0;
 }

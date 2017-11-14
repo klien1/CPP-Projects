@@ -2,11 +2,12 @@
 #define STRINGSUB_H
 
 #include "BufferedFile.h"
+#include <cstring>
 
 class StringSub {
   public:
-    StringSub(const string&);
-    void replace(const string&, const string&);
+    StringSub(const char*);
+    void replace(const char*, const char*);
 
   private:
     BufferedFile bf;

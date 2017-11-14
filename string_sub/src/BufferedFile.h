@@ -3,14 +3,12 @@
 #define BUFFERED_FILE_H
 
 #include <fstream>
-#include <string>
 #include <cassert>
 #include "TrackingDeque.h"
 
 #include <unistd.h> // truncate
 #include <sys/types.h> // truncate
 
-using std::string;
 using std::fstream;
 using std::istream;
 using std::ostream;
@@ -18,7 +16,7 @@ using std::streampos;
 
 class BufferedFile : public fstream {
   public:
-    BufferedFile(const string&);
+    BufferedFile(const char*);
     ~BufferedFile();
     istream& get(char&);
     ostream& put(char);
@@ -28,7 +26,8 @@ class BufferedFile : public fstream {
   private:
     streampos getpos;
     streampos putpos;
-    const string file;
+    // const string file;
+    const char* file;
     int num_char;
 };
 
