@@ -1,71 +1,84 @@
 #include "StringSub.h"
 
-StringSub::StringSub(const string& file) : bf(file) { }
+using std::cout;
+using std::endl;
 
-void StringSub::replace(const string& oldstring, const string& newstring) {
-  char c;
-  unsigned int match = 0;
-  while(bf.get(c)) {
-    // if match is found // call replace function
-    if (c == oldstring[match]) {
-      ++match;
-      if (match == oldstring.size()) {
-        // match a newstring.size() different depending on oldstring and new
-        if (oldstring.size() >= newstring.size()) {
-          for (unsigned int i = 0; i < newstring.size(); ++i) 
-            bf.put(newstring[i]);
-        } else {
-          for (unsigned int i = 0; i < match; ++i) {
-            td.push_back(newstring[i]);
-            bf.put(td.front());
-            td.pop_front();
-          }
-          for (unsigned int i = match; i < newstring.size(); ++i) 
-            td.push_back(newstring[i]);
-        }
-          match = 0;
-      }
-    }
-    else {
-      if (match > 0) {
-        unsigned int j = 0;
-        bf.put(oldstring[0]);
-        for (unsigned int i = 1; i < match; ++i) {
-          if (oldstring[i] == oldstring[j]) {
-            j++;
-          } else {
-            // if during recalc match ends
-            if (j > 0) {
-              for (unsigned int k = 0; k < j; ++k)
-                bf.put(oldstring[k]);
-            }
-            bf.put(oldstring[i]);
-            j = 0;
-          }
-        }
-        if (c == oldstring[j]) j++;
-        else j = 0;
-        match = j;
-      }
-      // temp char that hold cur character or characer in deque
-      char temp_char = c;
-      if (!td.empty()) {
-        temp_char = td.front();
-        td.pop_front();
-        td.push_back(c);
-      }
-      // if there is a match from recalculating, dont put
-      if (match == 0)
-        bf.put(temp_char);
-    }
+StringSub::StringSub(
+  const string& file, 
+  const string& srch, 
+  const string& repl) 
+  : bf(file), 
+    srch(srch), 
+    repl(repl),
+    repl_count(0),
+    srch_count(0),
+    num_match(0),
+    use_repl(false)
+    {}
+
+StringSub& StringSub::get(char& c) {
+  if (srch_count > 0) {
+    c = srch[num_match-srch_count];
+    --srch_count;
+    //cout << "get " << c << " from srch" << endl;
   }
-
-  while(!td.empty()) {
-    if (!bf.good())
-      bf.clear();
-    bf.put(td.front());
-    td.pop_front();
+  else if(repl_count > 0) {
+    c = repl[repl.size()-repl_count];
+    --repl_count;
+    //if (repl_count == 0)
+    //  use_repl = false;
+    //cout << "get " << c << " from repl" << endl;
   }
+  else if(!this->eof()) {
+    ////cout << "get from file" << endl;
+    bf.get(c);
+  }
+  return *this;
+}
 
-  if (!bf.good()) bf.clear();
+StringSub& StringSub::put(char c) {
+  if (repl_count < 1) use_repl = false;
+  bf.put(c);
+  return *this;
+}
+
+bool StringSub::eof() const {
+  return bf.eof();
+}
+
+bool StringSub::replacing() const {
+  /*
+  if (repl_count > 0)
+    return true;
+  return false;
+  */
+  return use_repl;
+}
+
+void StringSub::full_match() {
+  repl_count = repl.size();
+  use_repl = true;
+}
+
+void StringSub::part_match(int part_match, char c) {
+  /*
+  a
+  ...aa...
+  ...a
+       ^
+      ^
+  a
+  aa
+  ^
+  char_deque.push_front(srch[0]);
+  bf.put(char_deque.front());
+  char_deque.pop_front();
+  */
+  bf.put(srch[0]);
+  //std:://cout << srch[0];
+  num_match = part_match;
+  srch_count = part_match - 1;
+  repl_count = 0;
+  //srch_count = repl_count;
+  bf.do_over(c);
 }

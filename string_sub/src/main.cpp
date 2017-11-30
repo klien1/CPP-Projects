@@ -1,8 +1,6 @@
 #include <iostream>
 #include "StringSub.h"
 
-// #include <unistd.h> // truncate
-// #include <sys/types.h> // truncate
 using namespace std;
 
 // 1: old
@@ -11,14 +9,28 @@ using namespace std;
 int main(int argc, char const *argv[]) {
   if (argc != 4) {
     cout << "Invalid number of arguments.\n";
+    return 1;
   }
 
-  // const string t = argv[3];
-  // string t = argv[3];
-  StringSub ss(argv[3]);
-  ss.replace(argv[1], argv[2]);
-  // truncate(t, 5);
-  // StringSub ss("test.txt");
-  // StringSub ss("../string_substitution/string_sub_testing_suite/origfiles/File01.txt");
+  StringSub ss(argv[3], argv[1], argv[2]);
+  const string srch = argv[1];
+  const string repl = argv[2];
+  unsigned int num_match = 0;
+  char c;
+
+  while(!ss.get(c).eof()) {
+    if (!ss.replacing() && c == srch[num_match]) {
+      ++num_match;
+      if (num_match < srch.size())
+        continue;
+    }
+    if (num_match == srch.size())
+      ss.full_match();
+    else if (num_match > 0)
+      ss.part_match(num_match, c);
+    else
+      ss.put(c);
+    num_match = 0;
+  }
   return 0;
 }

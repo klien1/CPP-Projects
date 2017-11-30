@@ -5,12 +5,21 @@
 
 class StringSub {
   public:
-    StringSub(const string&);
-    void replace(const string&, const string&);
-
+    StringSub(const string&, const string&, const string&);
+    StringSub& get(char& c);
+    StringSub& put(char c);
+    bool eof() const;
+    bool replacing() const;
+    void full_match();
+    void part_match(int, char);
   private:
     BufferedFile bf;
-    TrackingDeque<char> td;
+    const string srch;
+    const string repl;
+    int repl_count;
+    int srch_count;
+    int num_match;
+    bool use_repl;
 };
 
 #endif
