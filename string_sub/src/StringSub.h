@@ -20,6 +20,7 @@ class StringSub {
     int srch_count;
     int num_match;
     bool use_repl;
+    int srch_offset;
 };
 
 #endif

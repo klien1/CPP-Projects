@@ -36,8 +36,6 @@ class BufferedFile : public fstream {
     bool stop_reading;
 
     void get_char_from_file(char&);
-
-    void print_deque() ;
 };
 
 #endif

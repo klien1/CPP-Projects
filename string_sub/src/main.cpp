@@ -1,4 +1,3 @@
-#include <iostream>
 #include "StringSub.h"
 
 using namespace std;
@@ -18,7 +17,9 @@ int main(int argc, char const *argv[]) {
   unsigned int num_match = 0;
   char c;
 
+  // get character while there are still characters to get
   while(!ss.get(c).eof()) {
+    // if not reading from replace string and character matches
     if (!ss.replacing() && c == srch[num_match]) {
       ++num_match;
       if (num_match < srch.size())
